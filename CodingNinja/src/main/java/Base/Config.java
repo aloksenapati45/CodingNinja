@@ -5,24 +5,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+public class Config {
+    public WebDriver driver;
 
-public class Base {
-
-    public static WebDriver driver;
     @Test
-    public static void lunchingGoogle() {
-
+    public void Connect(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.get("https://google.com");
-
     }
 
     @AfterTest
-    public static void TearDown(){
+    public void TearDown(){
         driver.close();
     }
-
 }
