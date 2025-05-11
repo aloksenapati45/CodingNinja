@@ -15,7 +15,7 @@ public class TC_RF_001 {
     public WebDriver driver;
 
     @Test
-    public void startWeb(){
+    public void VerifyRegisteringanAccountbyprovidingonlytheMandatoryfields(){
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -49,8 +49,8 @@ public class TC_RF_001 {
 
         Date date = new Date();
         String dateString = date.toString();
-        String dateStringWithoutSpaces = dateString.replaceAll("\\s","");
-        String dateStringWithoutSpacesAndColons = dateStringWithoutSpaces.replaceAll("\\:","");
+        String dateStringWithoutSpaces = dateString.replaceAll(" ","");
+        String dateStringWithoutSpacesAndColons = dateStringWithoutSpaces.replaceAll(":","");
         String brandNewEmail = dateStringWithoutSpacesAndColons+"@gmail.com";
         return brandNewEmail;
 
